@@ -12,11 +12,26 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 
 Document at least 3 bugs you found. Add rows as needed.
 
-| Input | Expected Behavior | Actual Behavior | Console Output / Error |
-|-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
-| | | | |
+Input
+Expected Behavior
+Actual Behavior
+Console Output / Error
+33
+Go higher 
+Go lower 
+Actual answer was 77
+New Game
+Go to new game and allow me to submit guess 
+Keeps repeating Game over and didn’t allow me to start new game 
+Game over. Start a new game to try again. 
+2
+Go higher 
+Go lower 
+77
+
+
+
+
 
 ---
 
