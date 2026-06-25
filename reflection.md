@@ -1,7 +1,6 @@
 # 💭 Reflection: Game Glitch Investigator
 
 Answer each question in 3 to 5 sentences. Be specific and honest about what actually happened while you worked. This is about your process, not trying to sound perfect.
-
 ## 1. What was broken when you started?
 
 - What did the game look like the first time you ran it?
@@ -11,9 +10,7 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 **Bug Reproduction Log**
 
 Document at least 3 bugs you found. Add rows as needed.
-
-<img width="486" height="194" alt="image" src="https://github.com/user-attachments/assets/f89a1015-dbed-4d2f-8d22-b4d4b2bc69c1" />
-
+<img width="486" height="194" alt="Screenshot 2026-06-25 150416" src="https://github.com/user-attachments/assets/157cfaf1-49f7-4aed-9c28-f12bc0045d8b" />
 
 ---
 
