@@ -25,21 +25,38 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+The Game Glitch Investigator is a number-guessing game built with Streamlit where:
+•	Players select a difficulty level (Easy: 1-20, Normal: 1-100, Hard: 1-50) that determines the range and attempt limit
+•	Players guess a secret number and receive feedback (too high, too low, or correct)
+•	A scoring system rewards successful guesses based on the number of attempts (100 - 10×attempts, minimum 10 points for a win)
+•	Players earn/lose bonus points on wrong guesses (±5 points depending on guess direction and attempt number)
+•	The game tracks history and displays debug information for transparency
+
+Bugs Found
+1.	NotImplementedError in logic_utils.py - All four core functions (check_guess, get_range_for_difficulty, parse_guess, update_score) were raising NotImplementedError instead of being implemented
+2.	Undefined variable references in app.py - Lines at the top attempted to call check_guess(guess_int, secret) before those variables were defined, causing immediate crashes
+3.	Wrong return format in check_guess() - The test file revealed the function should return emoji-based messages ("📈 Go HIGHER!", "📉 Go LOWER!", "🎉 Correct!") but the initial stub returned plain text
+4.	Missing logic flow - The submit block didn't call check_guess() to determine the outcome, leaving outcome and message undefined when needed for scoring and UI display
+
+Fixes applied.
+1.	Implemented all logic_utils.py functions - Moved game logic from app.py (or created missing implementations) for difficulty ranges, input parsing, guess evaluation, and score updates
+2.	Fixed check_guess() return values - Updated to return (outcome_string, emoji_message) tuples matching test specifications exactly
+3.	Refactored app.py imports - Added proper imports for all four functions from logic_utils module
+4.	Fixed submit logic - Added the missing check_guess() call in the submit block to evaluate guesses and set outcome/message variables
+
 
 ## 📸 Demo Walkthrough
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. User enters a guess of 40
+2. Game returns "Too Low"
+3. User enters a guess of 70 → "Too High"
+4. Score updates correctly after each guess
+5. Game ends after the correct guess which is 63
 
-**Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
+<img width="648" height="440" alt="image" src="https://github.com/user-attachments/assets/5bfa32b8-8981-49bd-9eb3-50e70ec636f0" />
+
 
 ## 🧪 Test Results
 
